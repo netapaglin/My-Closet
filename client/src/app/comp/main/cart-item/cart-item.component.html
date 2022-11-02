@@ -1,0 +1,16 @@
+<div class="item">
+  <mat-card class="card">
+    <mat-card-title-group>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+      <img mat-card-md-image src="{{product.img}}">
+    </mat-card-title-group>
+    <mat-card-content>Size: {{product.size}}</mat-card-content>
+    <mat-card-content>Quantity: {{product.quantity}}</mat-card-content>
+    <mat-card-actions *ngIf="cartStatus" align="end">
+      <button mat-button (click)="removeFromCart()">Remove</button><br />
+      <button mat-button (click)="updateCartProduct()">update</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

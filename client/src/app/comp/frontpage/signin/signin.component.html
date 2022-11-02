@@ -1,0 +1,112 @@
+<div class="formBox">
+  <form [formGroup]="form" (ngSubmit)="signUp()">
+    <fieldset *ngIf="step == 1">
+      <div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input type="text" name="name" formControlName="name" matInput>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.['minlength']">
+              <mat-hint>Name must be at least 3 characters long</mat-hint>
+            </div>
+            <div *ngIf="name.errors?.['required']">
+              <mat-hint>Name is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input type="text" name="last_name" formControlName="last_name" matInput>
+          <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)">
+            <div *ngIf="last_name.errors?.['minlength']">
+              <mat-hint>Last Name must be at least 2 characters long.</mat-hint>
+            </div>
+            <div *ngIf="last_name.errors?.['required']">
+              <mat-hint>Last Name is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>password</mat-label>
+          <input type="password" name="password" formControlName="password" matInput>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.['minlength']">
+              <mat-hint>Password must be at least 3 characters long</mat-hint>
+            </div>
+            <div *ngIf="password.errors?.['required']">
+              <mat-hint>Password is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label for="confirm_password">Confirm Password</mat-label>
+          <input formControlName="confirm_password" id="confirm_password" type="password" matInput>
+          <div *ngIf="confirm_password.invalid && confirm_password.touched">
+            <div *ngIf="confirm_password.errors?.['required']">
+              <mat-hint>Confirm password is required</mat-hint>
+            </div>
+            <div *ngIf="confirm_password.errors?.['matching']">
+              <mat-hint>Password and Confirm Password must be match</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+      </div>
+
+      <button (click)="next()" name="next" mat-stroked-button color="primary">Next</button>
+
+    </fieldset>
+
+    <fieldset *ngIf="step == 2">
+
+      <div>
+        <button (click)="previous()" type="button" name="previous" mat-stroked-button color="primary">Previous</button>
+        <mat-form-field appearance="outline">
+          <mat-label>Id</mat-label>
+          <input type="number" name="id" formControlName="id" matInput>
+          <div *ngIf="id.invalid && (id.dirty || id.touched)">
+            <div *ngIf="id.errors?.['minlength']">
+              <mat-hint>Id must be at least 6 characters long</mat-hint>
+            </div>
+            <div *ngIf="id.errors?.['required']">
+              <mat-hint>Id is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>e-mail</mat-label>
+          <input type="email" name="email" formControlName="email" matInput>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']">
+              <mat-hint>e-mail is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>City</mat-label>
+          <mat-select formControlName="city" id="city" name="city" required>
+            <mat-option *ngFor="let c of cityName" [value]="c">
+              {{ c }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Street</mat-label>
+          <input type="text" name="street" formControlName="street" matInput>
+          <div *ngIf="street.invalid && (street.dirty || street.touched)">
+            <div *ngIf="street.errors?.['required']">
+              <mat-hint>Street is required</mat-hint>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <button type="submit" mat-stroked-button color="primary">Sign up</button>
+        <p style="color:red">{{this.errMsg}}</p>
+      </div>

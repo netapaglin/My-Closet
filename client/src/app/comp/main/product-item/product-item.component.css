@@ -1,0 +1,36 @@
+
+.card{
+  background-color: rgb(255, 255, 255);
+}
+
+img{
+  width: 100%;
+}
+
+form{
+  text-align: center;
+}
+
+mat-form-field{
+  width: 30%;
+  margin: 2%;
+}
+
+button{
+  height: 50px;
+  position: relative;
+  margin: 2%;
+  top: -5px;
+}
+
+p{
+  text-align: center;
+}
+
+.forAdmin button{
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 7px 7px rgba(215, 213, 213, 0.628);
+}

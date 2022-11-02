@@ -1,0 +1,23 @@
+.formBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 30%;
+  height: 60%;
+  border-radius: 20px;
+  border: 1px solid rgb(68, 68, 68);
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+fieldset{
+  border: none;
+}
+

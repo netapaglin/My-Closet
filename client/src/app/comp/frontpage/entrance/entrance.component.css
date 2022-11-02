@@ -1,0 +1,16 @@
+.entrace{
+  background-color:rgba(8, 11, 50, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgb(68, 68, 68);
+  position: relative;
+  left: 35%;
+  top: 550px;
+  width: 30%;
+  height: 50px;
+  text-align: center;
+}
+
+h3{
+  padding: 11px 0;
+  color: white;
+}

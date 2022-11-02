@@ -1,0 +1,55 @@
+<p>Click on the product's edit button</p>
+
+<form *ngIf="selectedProduct" [formGroup]="editForm" (ngSubmit)="changeItem()">
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name:</mat-label>
+    <input type="text" name="name" formControlName="name" matInput>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.['minlength']">
+        <mat-hint>Name must be at least 3 characters long</mat-hint>
+      </div>
+      <div *ngIf="name.errors?.['required']">
+        <mat-hint>Name is required</mat-hint>
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Category: </mat-label>
+    <mat-select formControlName="category_id" id="category_id" name="category_id" required>
+      <mat-option *ngFor="let c of productsCategoryArr" [value]="c.id">
+        {{ c.category_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Price:</mat-label>
+    <input type="number" name="price" formControlName="price" matInput>
+    <div *ngIf="price.invalid && (price.dirty || price.touched)">
+      <div *ngIf="price.errors?.['required']">
+        <mat-hint> Price is required</mat-hint>
+      </div>
+      <div *ngIf="price.errors?.['min']">
+        <mat-hint> Price can't be negative</mat-hint>
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Image:</mat-label>
+    <input type="url" name="img" formControlName="img" matInput>
+    <div *ngIf="img.invalid && (img.dirty || img.touched)">
+      <div *ngIf="img.errors?.['required']">
+        <mat-hint> Image path is required</mat-hint>
+      </div>
+    </div>
+  </mat-form-field>
+
+  <div>
+    <p>{{this.errMsg}}</p>
+  </div>
+
+  <button type="submit" mat-stroked-button color="primary">Save changes</button>
+
+</form>

@@ -1,0 +1,49 @@
+
+<div class="products">
+
+  <div class="searchContainer">
+    <div class="searchBox">
+      <input (keyup.enter)="onSubmit()" [(ngModel)]="searchValue" type="text"  class="form-control"
+        placeholder="Search" />
+    </div>
+    <div *ngIf="searchText">
+      <P>Searching results for {{searchText}}</P>
+    </div>
+  </div>
+
+  <mat-tab-group  [(selectedIndex)]="select" animationDuration="0ms" (selectedTabChange)="categoryNum($event)">
+    <mat-tab label="All products">
+      <app-product-item *ngFor="let p of productsArr" [cartItemArr]="cartArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Shirts">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p" ></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Coats and Jackets">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Dresses">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Sweatshirt">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Jeans">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab label="Trousers">
+      <app-product-item *ngFor="let p of productsCategoryArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+    <mat-tab>
+       <app-product-item *ngFor="let p of searchResaultsArr" [product]="p"></app-product-item>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+

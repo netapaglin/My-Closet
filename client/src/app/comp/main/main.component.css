@@ -1,0 +1,39 @@
+.main {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+
+.drawerButton{
+  width: 100%;
+}
+
+.drawerButton button {
+  background-color: rgba(247, 32, 32, 0.33);
+  margin: 3%;
+  position: fixed;
+  z-index: 10;
+}
+
+.mat-drawer-container{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mat-drawer-content ng-star-inserted{
+  width: 100%;
+}
+
+.side {
+  width: 25%;
+}
+
+#adminButton{
+  width: 10%;
+  height: 5%;
+  margin-left: 2%;
+  border-radius: 20px;
+
+}

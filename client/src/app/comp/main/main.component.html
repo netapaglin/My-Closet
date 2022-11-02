@@ -1,0 +1,18 @@
+<div class="main">
+  
+  <mat-drawer-container  autosize>
+    <mat-drawer #drawer class="side" mode="side">
+      <app-cart *ngIf="!isAdmin"></app-cart>
+      <app-manage *ngIf="isAdmin"></app-manage>
+    </mat-drawer>
+
+    <div class="drawerButton">
+      <button mat-mini-fab *ngIf="!isAdmin" (click)="drawer.toggle()">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button id="adminButton" mat-raised-button *ngIf="isAdmin" (click)="drawer.toggle()">Edit / Add product</button>
+      <app-products [cartArr]="cartItems"></app-products>
+    </div>
+  </mat-drawer-container>
+
+</div>

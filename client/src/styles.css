@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  margin: 0;
+  /* font-family: Roboto,
+    "Helvetica Neue", sans-serif; */
+
+  background-image: url("https://thedesigntabloid.files.wordpress.com/2019/06/luxury-walk-in-closets-7.jpg?w=810");
+  /* background-image: url("https://i.pinimg.com/originals/d3/10/a7/d310a704fc2ddc9bf4f3677554f3c8db.jpg"); */
+  /* background-image: url("https://i.pinimg.com/originals/46/15/e1/4615e1817053cd732105fcefd78a3c2d.jpg"); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-image: url("https://cdn.makespace.com/blog/wp-content/uploads/2016/10/20165515/how-to-organize-your-closet1.jpg"); */
+  background-repeat: no-repeat
+}
+
+.highlightText {
+  background: yellow;
+}

@@ -1,0 +1,24 @@
+.formBox {
+  position: absolute;
+  top: 62%;
+  left: 65%;
+  transform: translate(-50%, -40%);
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 50%;
+  height: 70%;
+  border-radius: 20px;
+  border: 1px solid rgb(68, 68, 68)
+}
+
+form{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+mat-form-field, button{
+  display: block;
+  width: 80%;
+  margin: auto;
+}

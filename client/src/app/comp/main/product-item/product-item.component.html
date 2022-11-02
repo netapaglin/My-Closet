@@ -1,0 +1,35 @@
+<div class="card">
+
+  <img src="{{product.img}}" alt="fashion" />
+  <p>{{product.name}}</p>
+  <p>{{product.price |currency}}</p>
+
+
+  <div class="forUsers" *ngIf="!isAdmin">
+    <form [formGroup]="ItemForm" (ngSubmit)="add()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input matInput type="number" name="quantity" min=1 formControlName="quantity">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Size</mat-label>
+        <mat-select formControlName="size" id="size" name="size" required>
+          <mat-option *ngFor="let s of sizes" [value]="s">{{ s }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button [disabled]="displayAddButton !== true" type="submit" name="add" mat-stroked-button color="primary">Add</button>
+  
+    </form>
+    <div>
+      <p>{{this.errMsg}}</p>
+    </div>
+  </div>
+
+  <div class="forAdmin" *ngIf="isAdmin">
+    <button (click)="edit()" mat-stroked-button color="primary">Edit</button>
+  </div>
+
+</div>

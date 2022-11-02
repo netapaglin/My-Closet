@@ -1,0 +1,17 @@
+
+form{
+  margin-top: 7%;
+  width: 340px;
+  height: 100px;
+}
+
+mat-form-field{
+  display: block;
+}
+
+
+form button{
+  margin: auto;
+  display:block;
+}
+

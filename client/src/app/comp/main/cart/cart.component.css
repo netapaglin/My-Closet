@@ -1,0 +1,20 @@
+
+button{
+ background-color: white;
+ color: black;
+ margin: 15px;
+}
+
+h3, p{
+  text-align: center;
+  font-style: italic;
+  margin: 5%;
+}
+
+.greeeting{
+  border-radius: 20px;
+ background-color:rgba(247, 32, 32, 0.33);
+ margin: 5%;
+  margin-bottom: 10%;
+  padding: 3%;
+}

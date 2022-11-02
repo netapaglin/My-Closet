@@ -1,0 +1,53 @@
+<div class="formBox">
+
+  <form *ngIf="orderForm" [formGroup]="orderForm" (ngSubmit)="order()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <mat-select formControlName="city" id="city" name="city" required>
+        <mat-option *ngFor="let c of cityName" [value]="c">
+          {{ c }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Street</mat-label>
+      <input type="text" name="street" formControlName="street" matInput>
+      <div *ngIf="street.invalid && (street.dirty || street.touched)">
+        <div *ngIf="street.errors?.['required']">
+          <mat-hint>Street is required</mat-hint>
+        </div>
+      </div>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Arrivale date:</mat-label>
+      <input matInput name="arrival_date" formControlName="arrival_date" [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <div *ngIf="arrival_date.invalid && (arrival_date.dirty || arrival_date.touched)">
+        <div *ngIf="arrival_date.errors?.['required']">
+          <mat-hint>Date is required</mat-hint>
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>creditcard:</mat-label>
+      <input type="number" name="creditcard" formControlName="creditcard" matInput>
+      <div *ngIf="creditcard.invalid && (creditcard.dirty || creditcard.touched)">
+        <div *ngIf="creditcard.errors?.['required']">
+          <mat-hint> Creditcard is required</mat-hint>
+        </div>
+      </div>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button  [disabled]="!orderForm.valid" type="submit">Order</button>
+      <!-- <button mat-raised-button (click)="openDialog()" [disabled]="!orderForm.valid" type="submit">Order</button> -->
+    </mat-card-actions>
+  </form>
+
+</div>

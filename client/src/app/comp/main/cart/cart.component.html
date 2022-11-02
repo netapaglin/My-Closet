@@ -1,0 +1,29 @@
+<div>
+  <div class="greeeting">
+
+    <div *ngIf="cartStatus === 3 ">
+      <h3>Wellcome</h3>
+      <p>We hope you will enjoy your first purchase</p>
+    </div>
+
+    <div *ngIf="cartStatus === 1">
+      <h3>Wellcome back</h3>
+      <p>It is nice to see you again</p>
+    </div>
+
+    <div *ngIf="cartStatus === 0">
+      <h3>Wellcome back</h3>
+      <p>Here is your last purches</p>
+      <p>We hope that you enjoy them </p>
+    </div>
+  </div>
+
+  <button *ngIf="orderButton " mat-raised-button (click)="emptyCart()">Empty Cart</button>
+
+  <app-cart-item [cartStatus]="cartStatus" *ngFor="let p of cartProductArr" [product]="p"></app-cart-item>
+
+  <h3 *ngIf="cartStatus !== 3 && this.cartProductArr?.length !== 0"> Total Price : {{totalPrice}}</h3>
+ 
+  <button *ngIf="orderButton " (click)="order()" mat-raised-button>order</button>
+
+</div>

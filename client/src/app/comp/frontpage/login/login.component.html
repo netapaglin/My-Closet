@@ -1,0 +1,40 @@
+<div class="formBox">
+  <form [formGroup]="form" (ngSubmit)="login()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input type="text" name="name" formControlName="name" matInput>
+      <div *ngIf="name.invalid && (name.touched)">
+        <div *ngIf="name.errors?.['minlength']">
+          <mat-hint>Name must be at least 3 characters long</mat-hint>
+        </div>
+        <div *ngIf="name.errors?.['required']">
+          <mat-hint>Name is required</mat-hint>
+        </div>
+      </div>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="outline">
+      <mat-label>password</mat-label>
+      <input type="password" name="password" formControlName="password" matInput>
+      <div *ngIf="password.invalid && (password.touched)">
+        <div *ngIf="password.errors?.['minlength']">
+          <mat-hint>Password must be at least 3 characters long</mat-hint>
+        </div>
+        <div *ngIf="password.errors?.['required']">
+          <mat-hint>Password is required</mat-hint>
+        </div>
+      </div>
+    </mat-form-field>
+    <br />
+
+    <button type="submit" mat-stroked-button color="primary">Log in</button>
+
+    <p>Don't have an account yet? <a routerLink="/signin">Sign up</a></p>
+    <p style="color:red">{{this.errMsg}}</p>
+  </form>
+
+
+</div>

@@ -1,0 +1,21 @@
+.list{
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 7%;
+  padding: 3%;
+  border: 1px solid rgb(203, 201, 201);
+  border-radius: 15px;
+}
+
+#totalPrice{
+  width: 250px;
+  text-align: center;
+  width: 50%;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 7%;
+}
+
+

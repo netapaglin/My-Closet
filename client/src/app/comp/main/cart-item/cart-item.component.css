@@ -1,0 +1,15 @@
+*{
+  display: flex;
+}
+
+.card {
+  width: 300px;
+  margin: 15px;
+  background-color: rgb(244, 246, 250);
+  color: black;
+}
+
+mat-card-subtitle{
+  color: black;
+  padding-top:5%;
+}

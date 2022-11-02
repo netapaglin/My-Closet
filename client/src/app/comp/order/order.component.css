@@ -1,0 +1,29 @@
+.order {
+  display: flex;
+}
+
+.shipping{
+  width: 65%;
+}
+
+.prodList {
+  width: 30%;
+}
+
+.allOrder {
+  background-color: rgb(255, 255, 255, 0.2);
+  height: 100%;
+}
+
+button {
+  margin: 2%;
+}
+
+h2 {
+  margin: auto;
+  width: 50%;
+  background-color: rgba(247, 32, 32, 0.313);
+  border-radius: 15px;
+  text-align: center;
+}
+

@@ -1,0 +1,47 @@
+app-product-item{
+  width: 23%;
+  margin: 3%;
+  text-align: center;
+}
+
+*{
+  display: inline-block;
+  margin: 1%;
+}
+
+.searchContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchContainer input{
+  width: 80%;
+  height: 105%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border-color: rgb(222, 222, 222);
+}
+
+::ng-deep.mat-tab-label-container{
+  margin-left: 10%;
+}
+
+::ng-deep.mat-tab-body-content {
+  text-align: center;
+}
+
+.products{
+  width: 100% ;
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+  display: inline-block !important;
+  min-width: 0!important;
+  padding: 3px!important;
+  margin-left: 40px!important;
+  margin-top: 1 5px!important;
+ }
+
+
+
+

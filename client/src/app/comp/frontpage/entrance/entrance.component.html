@@ -1,0 +1,8 @@
+
+<div>
+  <router-outlet></router-outlet>
+  <div class="entrace" *ngIf="this.ordersAmount && this.productAmount">
+    <h3>{{ this.ordersAmount.totalOrders }} Orders Completed <span>&emsp;|&emsp;</span> {{
+      this.productAmount.totalProducts }} Available products</h3>
+  </div>
+</div>

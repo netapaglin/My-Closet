@@ -1,0 +1,14 @@
+<div class="allOrder">
+  <button (click)="toShop()" mat-raised-button>back to shop</button>
+  <div class="order">
+    <div class="prodList" >
+      <h2>Cart</h2>
+      <app-order-cart [cartArr]="orderProductArr" [price]="totalPrice"></app-order-cart>
+    </div>
+    <div class="shipping">
+      <h2>Payment & Shipping</h2>
+      <app-shipping [cartArr]="orderProductArr" [price]="totalPrice"></app-shipping>
+    </div>
+  </div>
+  </div>
+
